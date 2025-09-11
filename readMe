@@ -1,0 +1,30 @@
+What is a Data Structure ? 
+   * It is a mathematical or logical model of an organizitation of data.In short we can say like, it is a way to organize data in a form that
+     is accesible to computer.
+   * It allow processing the large amount of data in relatively short period of time.
+   * Main purpose of Data Structure is reduce the time and space complexity.
+   * An efficient Data Structure use minimum memmory and time to execute.
+
+Types of Data Structure ?
+    1)Linear data structure : Linked list, Array, Stack, Queue  - elements arrange in sequential order
+    2)Non-Linear data structure : Tree, Graph - They are organized in a hierarchical or graph-like structure.
+    3)Hash based data structure : Hash table, Hash map - These are data structures that use hashing to organize and access data efficiently.
+
+Linked List 
+    It is a fundamental data structure in computer science.It mainly allow effient insertion and deletion operation compare to array.
+    Access the data in sequential, not contiguos like array.
+
+Types of linked list?
+    1)Singly linked list
+        A singly linked list is a linear data structure where elements (called nodes) are connected using pointers/links.
+        Each node has two parts:
+            Data → the actual value (e.g., number, string, etc.)
+            Next (pointer) → reference to the next node in the list
+    2)doubly linked list 
+        A doubly linked list is also a linear data structure,
+        Each node has two links instead of one:
+            Data → stores the value
+            Next pointer → points to the next node
+            Prev pointer → points to the previous node
+    
+
