@@ -395,3 +395,64 @@ dLinked.printFromFront()
 dLinked.reverse()
 dLinked.printFromFront()
 
+class Node{
+    constructor(value){
+        this.value=value
+        this.next=null
+    }
+}
+class CircularLinkedList{
+    constructo(){
+        this.head=null
+        this.size=0
+        this.tail=null
+    }
+    isEmpty(){
+        return this.size===0
+    }
+    prepend(value){
+        let node=new Node(value)
+        if(this.isEmpty()){
+            this.head=node
+            this.tail=node
+            node.next=this.head
+        }else{
+            node.next=this.head
+            this.head=node
+            this.tail.next=this.head
+        }
+        this.size++
+    }
+
+}
+
+//Stack
+//Basic implementation of stack
+class Stack{
+    constructor(size){
+        this.top=-1
+        this.size=size
+        this.stack=new Array(size)
+    }
+    push(item){
+        if(this.top>=this.size-1){
+            console.log("Stack overflow")
+            return false
+        }else{
+            this.stack[++this.top]=item
+            return true
+        }
+    }
+    
+    pop(){
+        if(this.top<0){
+            console.log("Stack underflow")
+            return false
+        }else{
+            return this.stack[this.top--]
+        }
+    }
+    isEmpty(){
+        return this.top<0
+    }
+}

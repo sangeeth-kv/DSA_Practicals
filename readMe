@@ -26,5 +26,15 @@ Types of linked list?
             Data → stores the value
             Next pointer → points to the next node
             Prev pointer → points to the previous node
-    
+    3)circular linked list
+        A circular linked list is a data structure where the last node points back to the first node, forming a closed loop.
+            a)Structure: All nodes are connected in a circle, enabling continuous traversal without encountering NULL.
+            b)Difference from Regular Linked List: In a regular linked list, the last node points to NULL, whereas in a circular linked list, it points to the first node.
+            c)Uses: Ideal for tasks like scheduling and managing playlists, where smooth and repeated.
 
+STACK Data Structure
+    A Stack is a linear data structure that follows a particular order in which the operations are performed.
+    LIFO (Last In, First Out), This means the last item you put (push) into the stack is the first one you take (pop) out.
+        a)New elements are always pushed on top
+        b)Removal (pop) also happens only from the top.
+        c)This ensures a strict order: last in → first out.
