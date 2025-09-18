@@ -430,29 +430,194 @@ class CircularLinkedList{
 //Basic implementation of stack
 class Stack{
     constructor(size){
-        this.top=-1
         this.size=size
+        this.top=-1
         this.stack=new Array(size)
+    }
+    isEmpty(){
+        return this.top===-1
     }
     push(item){
         if(this.top>=this.size-1){
-            console.log("Stack overflow")
+            console.log("Stack overflow ")
             return false
         }else{
-            this.stack[++this.top]=item
-            return true
+             this.stack[++this.top]=item
+             return true
         }
     }
-    
     pop(){
-        if(this.top<0){
-            console.log("Stack underflow")
+        if(this.top===-1){
+            console.log("stack underflow")
             return false
         }else{
             return this.stack[this.top--]
         }
     }
-    isEmpty(){
-        return this.top<0
+    peek(){
+        if(this.isEmpty()){
+            console.log("Stack is empty")
+            return false
+        }else{
+            return this.stack[this.top]
+        }
+    }
+    toReverse(){
+        if(this.isEmpty()){
+            console.log("stack is empty")
+            return false
+        }else{
+            let dum=this.top
+            let arr=[]
+            while(dum>=0){
+                arr.push(this.stack[dum])
+                dum--
+            }
+            console.log(arr)
+        }
     }
 }
+
+const stack=new Stack(5)
+stack.push("a")
+stack.push("p")
+stack.push("p")
+stack.push("l")
+stack.push("e")
+console.log(stack.stack)
+stack.toReverse()
+
+//leetcode problem:
+
+// 155. Min Stack
+// 1047. Remove All Adjacent Duplicates In String
+// 20. Valid Parentheses
+
+//Queue Datastructure
+
+
+class Queue{
+    constructor(){
+        this.queue=[]
+    }
+    isEmpty(){
+        return this.queue.length===0
+    }
+    enqueue(value){
+        this.queue.push(value)
+    }
+    dequeue(){
+        if(this.isEmpty()){
+            return false
+        }else{
+          this.queue.shift()
+          return true
+        }
+    }
+    getFront(){
+        if(this.isEmpty()){
+            console.log("queue is empty")
+        }else{
+            console.log(this.queue[0])
+        }
+    }
+    display(){
+        if(this.isEmpty()){
+            console.log("Queue is empty")
+        }else{
+            console.log(this.queue.join(' '))
+        }
+    }
+}
+const q=new Queue()
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+q.enqueue(40)
+q.enqueue(50)
+q.display()
+q.dequeue()
+q.display()
+q.getFront()
+
+//Hash table
+
+
+ class HashTable{
+    constructor(size){
+        this.table=new Array(size)
+        this.size=size
+    }
+    _hash(key){
+        let total=0;
+        for(let i=0;i<key.length;i++){
+            total+=key.charCodeAt(i)
+        }
+        return total % this.size
+    }
+    set(key,value){
+        let index=this._hash(key)
+        let bucket=this.table[index]
+        if(!bucket){
+           this.table[index]=[[key,value]]
+        }else{
+
+            let sameKeyValue=bucket.find((itm)=>itm[0]===key)
+            if(sameKeyValue){
+                sameKeyValue[1]=value
+            }else{
+                bucket.push([key,value])
+            }
+        }
+    }
+    get(key){
+        let index=this._hash(key)
+        let bucket=this.table[index]
+        if(!bucket){
+            return undefined
+        }else{
+            let sameKey=bucket.find((itm)=>itm[0]===key)
+            if(sameKey){
+                return sameKey[1]
+            }else{
+                return undefined
+            }
+        }
+    }
+    remove(key){
+        let index=this._hash(key)
+        let bucket=this.table[index]
+        if(!bucket){
+            return undefined
+        }else{
+            let sameKey=bucket.find((itm)=>itm[0]===key)
+            if(sameKey){
+                bucket.splice(bucket.indexOf(sameKey),1)
+            }
+        }
+    }
+    display(){
+        for(let i=0;i<this.table.length;i++){
+            if(this.table[i]){
+                console.log(i,this.table[i])
+            }
+        }
+    }
+    
+}
+
+const hashTable=new HashTable(10)
+hashTable.set("name","sangeeth")
+hashTable.set("mane","san")
+hashTable.set("age","22")
+hashTable.set("place","kannur")
+console.log(hashTable.get("mane"))
+hashTable.display()
+
+
+
+
+
+
+
+

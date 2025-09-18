@@ -38,3 +38,51 @@ STACK Data Structure
         a)New elements are always pushed on top
         b)Removal (pop) also happens only from the top.
         c)This ensures a strict order: last in → first out.
+    Application of stack:
+        Function Call Management (Call Stack)
+        Undo/Redo Operations
+        Memory Management
+        Browser Navigation (History)
+
+
+QUEUE DATASTRUCTURE
+    Queue is a linear data structure that follows FIFO (First In First Out) Principle, so the first element inserted is the first to be popped out.
+    FIFO Principle in Queue:
+        FIFO Principle states that the first element added to the Queue will be the first one to be removed or processed. So, Queue is like a line of people waiting to purchase tickets, where the first person in line is the first person served. (i.e. First Come First Serve).
+    Queue Operations:
+        Enqueue: Adds an element to the end (rear) of the queue. If the queue is full, an overflow error occurs. Time and space O(1)
+        Dequeue: Removes the element from the front of the queue. If the queue is empty, an underflow error occurs.   Time and space O(1)
+        Peek/Front: Returns the element at the front without removing it.     Time and space O(1)
+    Types of Queues : 
+        Simple Queue: Simple Queue simply follows FIFO Structure.
+        Double-Ended Queue (Deque): In a double-ended queue the insertion and deletion operations, both can be performed from both ends. They are of two types: 
+            i) Input Restricted Queue: This is a simple queue. In this type of queue, the input can be taken from only one end but deletion can be done from any of the ends.
+            ii)Output Restricted Queue: This is also a simple queue. In this type of queue, the input can be taken from both ends but deletion can be done from only one end.
+        Priority Queue: A priority queue is a special queue where the elements are accessed based on the priority assigned to them. They are of two types:
+            i)Ascending Priority Queue : :In Ascending Priority Queue, the elements are arranged in increasing order of their priority values. Element with smallest priority value is popped first.
+            ii) Descending : In Descending Priority Queue, the elements are arranged in decreasing order of their priority values. Element with largest priority is popped first.
+
+    Applications of Queue Data Structure:
+        CPU Task Scheduling
+        Disk Scheduling
+        Handling Requests in Servers
+        Data Buffers
+
+Hash table
+    Hashing is a techinque that used in data structure to store and retrive data in a way that allow for quick access.
+    Hashing involves maping data into specific index in hashtable(an array of items)using a hash function.It enable fast retieval of data based on its key.
+    The great thing about hashing is,we can achive all three operations(search,insert,delete)in constant time complexity O(1).
+
+    Hash function:
+        Hash fn accepts the key as string, convert into a hash code using a defined logic and then map into a numeric index that is with in the bound of an array.using the index,store the value.
+
+    Hash table used for:
+        Hash table are typicaly implemented where constant time lookup and insertion are required
+        Database indexing
+        Caches
+
+    3 main operations in Hash table:
+        Set to store a key value pair
+        Get to retrive a value given its key
+        Remove to delete a key value pair
+        _hash function to hash the the key. 
