@@ -86,3 +86,43 @@ Hash table
         Get to retrive a value given its key
         Remove to delete a key value pair
         _hash function to hash the the key. 
+
+//Trees
+    It is a data structure in which data is organized hierarchically and linked together. Some Examples are the Binary Search tree, Binary tree, Splay tree, AVL Tree, etc.
+
+        1)Binary tree data structure:
+            A Binary Tree Data Structure is a hierarchical data structure in which each node has at most two children, referred to as the left child and the right child.
+            It is commonly used in computer science for efficient storage and retrieval of data, with various operations such as insertion, deletion, and traversal.
+
+        Representation of a binary tree:
+            Each node in binary tree has three part :
+                i)Data
+                ii)pointer to the left child
+                iii)pointer to right child
+
+        Terminologies in Binary Tree:
+            i)Nodes: The fundamental part of a binary tree, where each node contains data and link to two child nodes.
+            ii)Root: The topmost node in a tree is known as the root node. It has no parent and serves as the starting point for all nodes in the tree.
+            iii)Parent Node: A node that has one or more child nodes. In a binary tree, each node can have at most two children.
+            iv)Child Node: A node that is a descendant of another node (its parent).
+            v)Leaf Node: A node that does not have any children or both children are null.
+            vi)Internal Node: A node that has at least one child. This includes all nodes except the leaf nodes
+            vii)Depth of a Node: The number of edges from a specific node to the root node. The depth of the root node is zero.
+            viii)Height of a Binary Tree: The number of nodes from the deepest leaf node to the root node.
+        Operations on binary tree:
+            1)Traversal: in Binary Tree involves visiting all the nodes of the binary tree. Tree Traversal algorithms can be classified broadly into two categories, DFS and BFS:
+                A)Depth-First Search (DFS) algorithms:  Time :O(n),Space :O(n)
+                     DFS explores as far down a branch as possible before backtracking. It is implemented using recursion. The main traversal methods in DFS for binary trees are:
+                        i)Preorder Traversal (current-left-right): Visits the node first, then left subtree, then right subtree
+                        ii)Inorder Traversal (left-current-right): Visits left subtree, then the node, then the right subtree.
+                        iii)Postorder Traversal (left-right-current): Visits left subtree, then right subtree, then the node.
+                B)Breadth-First Search (BFS) algorithms:
+                    BFS explores all nodes at the present depth before moving on to nodes at the next depth level. It is typically implemented using a queue. BFS in a binary tree is commonly referred to as Level Order Traversal.
+            
+            2) Search : Searching for a value in a binary tree means looking through the tree to find a node that has that value. Since binary trees do not have a specific order like binary search trees, we typically use any traversal method to search. Please refer Search a node in Binary Tree for details.  Time and Space O(n)
+            3)Insertion and Deletion  
+
+        what is bst? (Binary Search Tree)
+            When inserting:If the new value < curr.value → go left, Else → go right
+            Left subtree contains only smaller values
+            Right subtree contains only larger values

@@ -614,10 +614,146 @@ hashTable.set("place","kannur")
 console.log(hashTable.get("mane"))
 hashTable.display()
 
+//Leetcode questions:
+// Two Sum
+// Valid Anagram
+// First Unique Character in a String
+// Contains Duplicate
 
 
+//Trees
 
+class Node{
+    constructor(value){
+        this.value=value
+        this.left=null
+        this.right=null
+    }
+}
+class BinarySearchTree{
+    constructor(){
+        this.root=null
+    }
+    insert(value){
+        let node=new Node(value)
+        if(this.root===null){
+            this.root=node
+        }else{
+            let root=this.root
+            while(true){
+                if(value<root.value){
+                    if(!root.left){
+                        root.left=node
+                        return
+                    }else{
+                        root=root.left
+                    }
+                }else{
+                    if(!root.right){
+                        root.right=node
+                        return
+                    }else{
+                        root=root.right
+                    }
+                }
+            }
+        }
+    }
+    search(value,root=this.root){
+        if(root){
+            if(value===root.value){
+                return true
+            }else if(value<root.value){
+                return this.search(value,root.left)
+            }else{
+                return this.search(value,root.right)
+            }
+        }
+        return false
+        
+    }
+    preOrder(root=this.root){
+        if(!root)return
+        console.log(root.value)
+        this.preOrder(root.left)
+        this.preOrder(root.right)
+    }
+    inOrder(root=this.root){
+        if(!root)return
+        this.inOrder(root.left)
+        console.log(root.value)
+        this.inOrder(root.right)
+    }
+    postOrder(root=this.root){
+        if(!root)return
+        this.postOrder(root.left)
+        this.postOrder(root.right)
+        console.log(root.value)
+    }
+    levelOrder(){
+        if(this.root===null)return 
+        let queue=[this.root]
+        while(queue.length){
+            let node=queue.shift()
+            console.log(node.value)
+            if(node.left)queue.push(node.left)
+            if(node.right)queue.push(node.right)
+        }
+    }
+    findMin(root=this.root){
+        if(root){
+            while(root.left){
+                root=root.left
+            }
+            return root.value
+        }
+    }
+    findMax(root=this.root){
+        if(root){
+            while(root.right){
+                root=root.right
+            }
+            return root.value
+        }
+    }
+    findHeight(root){
+        if(!root)return -1
+        return 1+Math.max(this.findHeight(root.left),this.findHeight(root.right))
+    }
+    delete(root=this.root,value){
+        if(!root)return null
+        if(value<root.value){
+            root.left=this.delete(root.left,value)
+        }else if(value>root.value){
+            root.right=this.delete(root.right,value)
+        }else{
+            if(!root.left&&!root.right)return null
+            if(!root.left)return root.right
+            if(!root.right)return root.left
+            
+             root.value=this.findMin(root.right)
+             root.right=this.delete(root.right,root.value)
+        }
+        return root
+    }
+    isBalanced(root=this.root){
+        if(!root)return true
+        let leftHei=this.findHeight(root.left)
+        let rightHei=this.findHeight(root.right)
+        return Math.abs(leftHei-rightHei)<=1 && this.isBalanced(root.left)&&this.isBalanced(root.right)
+    }
+}
 
-
-
-
+const bst=new BinarySearchTree()
+bst.insert(70)
+bst.insert(10)
+bst.insert(20)
+bst.insert(50)
+bst.insert(40)
+bst.preOrder()
+console.log("=========")
+console.log(bst.search(10))
+console.log("=========")
+bst.inOrder()
+console.log("=========")
+bst.levelOrder()
